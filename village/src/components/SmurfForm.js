@@ -18,7 +18,7 @@ class SmurfForm extends Component {
     // add code to create the smurf using the api
     let newSmurf = {
       id: this.props.id,
-      name: this.state.name,
+      name: this.state.name, 
       age: this.state.age,
       height: this.state.height,
     }
@@ -34,7 +34,7 @@ class SmurfForm extends Component {
         )
       )
     }).catch((err) => console.log(err))
-    this.props.update(newSmurf)
+    this.props.update(newSmurf) 
     
   }
 
