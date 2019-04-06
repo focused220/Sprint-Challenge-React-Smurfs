@@ -22,7 +22,7 @@ class App extends Component {
       )})
   }
 
-  nextID = () => {
+  nextID = () => { 
     let id = this.state.smurfs.length + 1;
     return id;
   }
