@@ -10,7 +10,6 @@ class SmurfForm extends Component {
       age: '',
       height: ''
     };
-    console.log(props)
   }
 
   addSmurf = event => {
@@ -24,7 +23,6 @@ class SmurfForm extends Component {
     }
 
     Axios.post('http://localhost:3333/smurfs', newSmurf).then((res) => {
-      console.log(res.data)
       return(
         this.setState({
           name: '',

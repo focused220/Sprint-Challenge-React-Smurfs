@@ -27,6 +27,18 @@ class App extends Component {
     return id;
   }
 
+  removeSmurf = (id) =>{
+    console.log(id)
+    console.log(this.props.smurfs)
+    return(
+      axios.delete(`http://localhost:3333/smurfs/${id}` )
+      .then(
+        this.setState(()=> null)       
+    ).catch(err => console.log(err))
+  )}
+
+
+
   updateSmurfs = (smurf) => {
     this.setState(prevState => {
       return({smurfs: [...prevState.smurfs, smurf]})
@@ -42,7 +54,8 @@ class App extends Component {
         <NavLink exact to='/smurf-form'>Smurf Form</NavLink> 
       </nav>
         <Route path='/smurf-form'><SmurfForm update={this.updateSmurfs} id={this.nextID}/></Route>
-        <Route path='/'><Smurfs smurfs={this.state.smurfs} /></Route>
+        <Route path='/'><Smurfs smurfs={this.state.smurfs} update={this.componentDidMount} 
+              remove={this.removeSmurf}/></Route>
       </div>
     );
   }
