@@ -39,7 +39,7 @@ class App extends Component {
       <div className="App">
       <nav className='links'>
         <NavLink exact to='/'>Home</NavLink>
-        <NavLink exact to='/smurf-form'>Smurf Form</NavLink>
+        <NavLink exact to='/smurf-form'>Smurf Form</NavLink> 
       </nav>
         <Route path='/smurf-form'><SmurfForm update={this.updateSmurfs} id={this.nextID}/></Route>
         <Route path='/'><Smurfs smurfs={this.state.smurfs} /></Route>
